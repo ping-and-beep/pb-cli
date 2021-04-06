@@ -1,0 +1,56 @@
+{
+  "name": "pingbeep-cli",
+  "description": "The Ping & Beep CLI.",
+  "version": "0.1.0",
+  "author": "Ping & Beep",
+  "bin": {
+    "pingbeep": "./bin/run"
+  },
+  "bugs": "https://github.com/ping-and-beep/pingbeep-cli/issues",
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@oclif/plugin-help": "^3.2.0",
+    "@oclif/plugin-warn-if-update-available": "^1.7.0",
+    "cli-ux": "^5.4.10",
+    "configstore": "^5.0.1",
+    "got": "^11.5.2"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "eslint": "^5.16.0",
+    "eslint-config-oclif": "^3.1.0",
+    "globby": "^10.0.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/ping-and-beep/pingbeep-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "pingbeep",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-warn-if-update-available"
+    ]
+  },
+  "repository": "ping-and-beep/pingbeep-cli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint .",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
